@@ -9,9 +9,9 @@ const listIndexing = async (signal) => {
       signal: signal
     })
     return await response.json()
-  } catch(err) {
+  } catch (err) {
     console.error(err)
-    return {error: err}
+    return { error: err }
   }
 }
 

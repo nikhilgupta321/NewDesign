@@ -32,7 +32,6 @@ export default function Archives(props) {
 
   return (
     <>
-      {/* <BabaJi /> */}
       <div className="page">
         <PageTitle title="ARCHIVES" />
 

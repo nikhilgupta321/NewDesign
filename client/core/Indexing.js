@@ -45,11 +45,6 @@ export default function Indexing(props) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {/* <img
-                src={`assets/indexing/${indexing.image}`}
-                className="w-full h-auto bg-blue-600 -webkit-optimize-contrast"
-                alt={indexing.title}
-              /> */}
                 {indexing.title}
               </a>
             );

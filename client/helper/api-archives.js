@@ -1,18 +1,18 @@
 const createIssue = async (credentials, params) => {
   try {
-      let response = await fetch('/api/admin/create-issue', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + credentials.token
-        },
-        body: JSON.stringify(params)
-      })
+    let response = await fetch('/api/admin/create-issue', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + credentials.token
+      },
+      body: JSON.stringify(params)
+    })
     return await response.json()
-  } catch(err) {
+  } catch (err) {
     console.error(err)
-    return {error: err}
+    return { error: err }
   }
 }
 
@@ -26,7 +26,7 @@ const listPublicArchives = async (signal) => {
     return await response.json();
   } catch (err) {
     console.error(err);
-    return {error: err}
+    return { error: err }
   }
 };
 
@@ -41,9 +41,9 @@ const listAdminArchives = async (credentials) => {
       }
     })
     return await response.json()
-  } catch(err) {
+  } catch (err) {
     console.error(err)
-    return {error: err}
+    return { error: err }
   }
 }
 
@@ -59,9 +59,9 @@ const read = async (params, credentials, signal) => {
       }
     })
     return await response.json()
-  } catch(err) {
+  } catch (err) {
     console.error(err)
-    return {error: err}
+    return { error: err }
   }
 }
 
@@ -77,9 +77,9 @@ const update = async (params, credentials, user) => {
       body: JSON.stringify(user)
     })
     return await response.json()
-  } catch(err) {
+  } catch (err) {
     console.error(err)
-    return {error: err}
+    return { error: err }
   }
 }
 
@@ -87,12 +87,12 @@ const addArticle = async (data, file, credentials) => {
   try {
     const formData = new FormData();
 
-    for ( var key in data ) {
+    for (var key in data) {
       formData.append(key, data[key]);
     }
-  
+
     formData.append("pdfFile", file);
-    
+
     let response = await fetch('/api/admin/archives/', {
       method: 'POST',
       body: formData,
@@ -103,7 +103,7 @@ const addArticle = async (data, file, credentials) => {
     return await response.json()
   } catch (err) {
     console.error(err)
-    return {error: err}
+    return { error: err }
   }
 }
 
@@ -111,12 +111,12 @@ const updateArticle = async (params, credentials) => {
   try {
     const formData = new FormData();
 
-    for ( var key in params.data ) {
+    for (var key in params.data) {
       formData.append(key, params.data[key]);
     }
-  
-    if(params.file) formData.append("pdfFile", params.file);
-    
+
+    if (params.file) formData.append("pdfFile", params.file);
+
     let response = await fetch(`/api/archives/${params.id}`, {
       method: 'POST',
       body: formData,
@@ -127,7 +127,7 @@ const updateArticle = async (params, credentials) => {
     return await response.json()
   } catch (err) {
     console.error(err)
-    return {error: err}
+    return { error: err }
   }
 }
 
@@ -141,7 +141,7 @@ const listPublicIssue = async (params, signal) => {
     return result
   } catch (err) {
     console.error(err)
-    return {error: err}
+    return { error: err }
   }
 }
 
@@ -155,7 +155,7 @@ const listAdminIssue = async (params, signal) => {
     return result
   } catch (err) {
     console.error(err)
-    return {error: err}
+    return { error: err }
   }
 }
 
@@ -169,7 +169,7 @@ const archivesByRef = async (ref, signal) => {
     return result
   } catch (err) {
     console.error(err);
-    return {error: err}
+    return { error: err }
   }
 }
 
@@ -183,7 +183,7 @@ const archivesById = async (id, signal) => {
     return result
   } catch (err) {
     console.error(err);
-    return {error: err}
+    return { error: err }
   }
 }
 
@@ -197,7 +197,7 @@ const searchArchives = async (query, signal) => {
     return result
   } catch (err) {
     console.error(err);
-    return {error: err}
+    return { error: err }
   }
 };
 
