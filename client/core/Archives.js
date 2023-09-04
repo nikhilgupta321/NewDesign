@@ -4,7 +4,6 @@ import PageTitle from "./PageTitle";
 import { Link } from "react-router-dom";
 import { listPublicArchives } from "../helper/api-archives";
 import { GlobalContext } from "../context/GlobalContext";
-import BabaJi from "./BabaJi";
 
 export default function Archives(props) {
   const { settings } = useContext(GlobalContext);
