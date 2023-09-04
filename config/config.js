@@ -1,0 +1,48 @@
+const fs = require("fs");
+import { Sequelize } from "sequelize";
+require("dotenv").config();
+
+const cwd = __dirname.split("/");
+const rootDir = cwd.slice(0, cwd.length - 1).join("/");
+
+const assetsDir = process.env.ASSETS_DIR;
+const port = process.env.PORT;
+const dbName = process.env.DB_NAME;
+const dbUser = process.env.DB_USER;
+const dbPass = process.env.DB_PASS;
+const jwtSecret = process.env.JWT_SECRET;
+const textlocalApi = process.env.TEXT_LOCAL_API;
+
+const archivesDir = assetsDir + "/archives";
+const imagesDir = assetsDir + "/images";
+const editorsDir = assetsDir + "/editors";
+
+const config = {
+  port: port,
+  jwtSecret: jwtSecret,
+  textlocalApi: textlocalApi,
+  rootDir: rootDir,
+  assetsDir: assetsDir,
+  archivesDir: archivesDir,
+  imagesDir: imagesDir,
+  editorsDir: editorsDir,
+};
+
+const sequelize = new Sequelize({
+  database: dbName,
+  username: dbUser,
+  host: "68.178.171.26",
+  password: dbPass,
+  dialect: "mysql",
+  timezone: "+05:30",
+});
+
+const transactiondb = new Sequelize({
+  database: "academicpublicationsnet",
+  username: "pbtdhkbkmzn0",
+  host: "107.180.51.85",
+  password: "Ya$7hb2uhloU",
+  dialect: "mysql",
+});
+
+export { transactiondb, sequelize, config };
