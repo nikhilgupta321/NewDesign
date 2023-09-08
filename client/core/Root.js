@@ -36,7 +36,8 @@ export default function Root() {
               }}
             ></div>
             <div
-              className="hidden text-4xl font-bold text-center lg:block lg:text-left text-cyan-500"
+              // className="hidden text-4xl font-bold text-center lg:block lg:text-left text-cyan-500"
+              className="justify-center hidden px-32 text-4xl font-bold text-center lg:block lg:text-center text-cyan-500"
               dangerouslySetInnerHTML={{
                 __html: settings.websitename,
               }}
@@ -44,11 +45,11 @@ export default function Root() {
           </div>
         </div>
         <hr class="mt-2 mb-4 border-2 border-black cursor-pointer duration-500" />
-        <div className="flex flex-col text-xl  lg:flex-row lg:gap-9">
+        <div className="flex flex-col text-xl lg:flex-row lg:gap-9">
           <div className="py-2 border-t-2 border-cyan-500 lg:border-none">
             <Link to="/">HOME</Link>
           </div>
-          <div className="py-2 border-t-2 text-black lg:border-none">
+          <div className="py-2 text-black border-t-2 lg:border-none">
             <Link to="/board">EDITORIAL BOARD</Link>
           </div>
           <div className="py-2 border-t-2 border-cyan-500 lg:border-none">
