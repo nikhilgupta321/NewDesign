@@ -72,33 +72,21 @@ export default function Root() {
             {settings && settings.issn && settings.issn.split(",")[0]}
           </div>
         </div>
-
-
-
-
-
-
-
         {/* <img id="header-img" src="/assets/images/header.jpg" /> */}
         <div id="body-container-desktop">
           <div id="page-content">
             <Outlet />
           </div>
           <div className="sidebar">
-
-
             <CoverPage />
             <Certificate />
-
             <Indexing />
-
-
             {/* <JournalList /> */}
             {/* <Whatsapp /> */}
-            <SearchBar />
             {/* <CoverPage /> */}
-            <Email />
             {/* <Certificate /> */}
+            <SearchBar />
+            <Email />
             <Contact />
           </div>
         </div>
