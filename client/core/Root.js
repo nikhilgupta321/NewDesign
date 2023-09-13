@@ -46,26 +46,26 @@ export default function Root() {
         </div>
         <hr class="mt-2 mb-4 border-2 border-black cursor-pointer duration-500" />
         <div className="flex flex-col text-xl lg:flex-row lg:gap-9">
-          <div className="py-2 border-t-2 border-cyan-500 lg:border-none">
+          <div className="py-2 text-center border-t-2 border-cyan-500 lg:border-none">
             <Link to="/">HOME</Link>
           </div>
-          <div className="py-2 text-black border-t-2 lg:border-none">
+          <div className="py-2 text-center border-t-2 border-cyan-500 lg:border-none">
             <Link to="/board">EDITORIAL BOARD</Link>
           </div>
-          <div className="py-2 border-t-2 border-cyan-500 lg:border-none">
+          <div className="py-2 text-center border-t-2 border-cyan-500 lg:border-none">
             <Link to="/instructions">INSTRUCTIONS</Link>
           </div>
-          <div className="py-2 border-t-2 border-cyan-500 lg:border-none">
+          <div className="py-2 text-center border-t-2 border-cyan-500 lg:border-none">
             <Link to="/archives">ARCHIVES</Link>
           </div>
-          {!hide && (<div className="py-2 border-t-2 border-cyan-500 lg:border-none">
+          {!hide && (<div className="py-2 text-center border-t-2 border-cyan-500 lg:border-none">
             <Link to="/article">SUBMIT ONLINE</Link>
           </div>)}
-          <div className="py-2 border-t-2 border-cyan-500 lg:border-none">
+          <div className="py-2 text-center border-t-2 border-cyan-500 lg:border-none">
             <Link to="/indexing">INDEXING</Link>
           </div>
 
-          <div className="py-2 border-cyan-500 border-y-2 lg:border-none">
+          <div className="py-2 text-center border-cyan-500 border-y-2 lg:border-none">
             <Link to="/contact">CONTACT US</Link>
           </div>
           <div className="py-2 text-cyan-500 border-y-2 lg:border-none back">
@@ -78,25 +78,25 @@ export default function Root() {
             <Outlet />
           </div>
           <div className="sidebar">
-            <CoverPage />
-            <Certificate />
-            <Indexing />
             {/* <JournalList /> */}
             {/* <Whatsapp /> */}
             {/* <CoverPage /> */}
             {/* <Certificate /> */}
-            <SearchBar />
             <Email />
+            <CoverPage />
+            <Certificate />
+            <SearchBar />
+            <Indexing />
             <Contact />
           </div>
         </div>
         <div id="body-container-mobile">
-          <WhatsappSticky />
+          {/* <WhatsappSticky /> */}
+          {/* <JournalList /> */}
           <SearchBar />
           <Outlet />
           <Email />
           <Contact />
-          <JournalList />
           <CoverPage />
         </div>
       </div>
