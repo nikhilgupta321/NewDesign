@@ -93,11 +93,12 @@ export default function Root() {
         <div id="body-container-mobile">
           {/* <WhatsappSticky /> */}
           {/* <JournalList /> */}
-          <SearchBar />
           <Outlet />
           <Email />
           <Contact />
+          <SearchBar />
           <CoverPage />
+          <Certificate />
         </div>
       </div>
       <div id="footer">
