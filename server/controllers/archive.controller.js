@@ -79,7 +79,7 @@ const addArticle = async (req, res) => {
           return row.pagenumber.split("-")[1];
         })
       );
-      if (data.pagenumber.split("-")[0] < max) throw "invalid_pagenumber";
+      // if (data.pagenumber.split("-")[0] < max) throw "invalid_pagenumber";
     }
 
     const pdfFile = req.files.pdfFile;
@@ -114,8 +114,7 @@ const updateArticle = async (req, res) => {
     const setting = await Setting.findOne({ raw: true });
 
     const rows = await transactiondb.query(
-      `
-      SELECT * FROM transactions
+      `SELECT * FROM transactions
       WHERE journal = '${setting.websitename}'
       AND txnid = '${data.txnid}'
       AND status = 'successful'`,
