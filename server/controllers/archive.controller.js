@@ -72,15 +72,15 @@ const addArticle = async (req, res) => {
       raw: true,
     });
 
-    // if (pagenumbers.length > 0) {
-    //   const max = Math.max.apply(
-    //     Math,
-    //     pagenumbers.map(function (row) {
-    //       return row.pagenumber.split("-")[1];
-    //     })
-    //   );
-    //   // if (data.pagenumber.split("-")[0] < max) throw "invalid_pagenumber";
-    // }
+    if (pagenumbers.length > 0) {
+      const max = Math.max.apply(
+        Math,
+        pagenumbers.map(function (row) {
+          return row.pagenumber.split("-")[1];
+        })
+      );
+      // if (data.pagenumber.split("-")[0] < max) throw "invalid_pagenumber";
+    }
 
 
     // if (pagenumbers.length > 0) {
