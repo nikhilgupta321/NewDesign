@@ -56,7 +56,7 @@ export default function Dashboard(props) {
     <div className="flex flex-wrap gap-8">
       <Card title="Archives" content={values.archives} link="/admin/archives" />
       <Card title="Editors" content={values.editors} link="/admin/editors" />
-      <Card title="Settings" link="/admin/settings" />
+      {/* <Card title="Settings" link="/admin/settings" /> */}
     </div>
   )
 }
