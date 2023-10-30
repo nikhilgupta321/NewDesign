@@ -121,7 +121,7 @@ const updateArticle = async (req, res) => {
       { type: Sequelize.QueryTypes.SELECT }
     );
 
-    if (rows.length != 1) throw "invalid_txnid";
+    // if (rows.length != 1) throw "invalid_txnid";
 
     if (req.files && req.files.pdfFile) {
       const pdfFile = req.files.pdfFile;
