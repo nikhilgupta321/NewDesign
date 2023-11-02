@@ -18,13 +18,12 @@ export default function AddEditor(props) {
     phone: '',
     country: '',
   })
-  const [editorPic, setEditorPic] = useState()
 
+  const [editorPic, setEditorPic] = useState()
   const jwt = auth.isAuthenticated()
 
   const handleChange = name => event => {
     setEditor({ ...editor, [name]: event.target.value })
-
   }
 
   const handleChangeFile = (event) => {
