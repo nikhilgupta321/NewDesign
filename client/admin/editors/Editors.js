@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Flash from "../Flash";
 import { listEditors } from "../../helper/api-editors";
 import { getEditorsCertificate } from "../../helper/api-pdf";
+import auth from "../../helper/auth-helper"
 
 const parseDate = (date) => {
   if (!date) return ''
@@ -25,12 +26,12 @@ const saveEditorsCertificate = (selected) => {
 }
 
 
-const statusWithColor = (status) => {
-  if (status == 'disabled')
-    return <div className="text-red-600">disabled</div>
-  else
-    return <div className="text-green-600">enabled</div>
-}
+// const statusWithColor = (status) => {
+//   if (status == 'disabled')
+//     return <div className="text-red-600">disabled</div>
+//   else
+//     return <div className="text-green-600">enabled</div>
+// }
 
 export default function Editors(props) {
   const [editors, setEditors] = useState([])
@@ -54,22 +55,82 @@ export default function Editors(props) {
     }
   }
 
-  useEffect(() => {
-    const abortController = new AbortController()
-    const signal = abortController.signal
+  // useEffect(() => {
+  //   const abortController = new AbortController()
+  //   const signal = abortController.signal
+
+  //   listEditors(signal).then((data) => {
+  //     if (data && data.error) {
+  //       console.error(data.error)
+  //     } else if (data) {
+  //       setEditors(data)
+  //     }
+  //   })
+
+  //   return function cleanup() {
+  //     abortController.abort()
+  //   }
+  // }, [])
+
+  //Sushil singh start 
+  const editorsData = () => {
+    const abortController = new AbortController();
+    const signal = abortController.signal;
 
     listEditors(signal).then((data) => {
       if (data && data.error) {
-        console.error(data.error)
+        console.error(data.error);
       } else if (data) {
-        setEditors(data)
+        setEditors(data);
       }
-    })
+    });
 
     return function cleanup() {
-      abortController.abort()
-    }
-  }, [])
+      abortController.abort();
+    };
+  }
+  useEffect(() => {
+    editorsData()
+  }, []);
+
+  // const toggleEditorStatus = (editorId) => {
+  //   const editor = editors.find((editor) => editor.id === editorId);
+  //   const newStatus = editor.status === 'enabled' ? 'disabled' : 'enabled';
+  //   updateEditorStatus(editorId, newStatus);
+  // };
+  const jwt = auth.isAuthenticated()
+  const statusToggleButton = (status, id) => {
+    const toggleStatus = async () => {
+      let token = jwt.token
+      let statusData = status == 'enabled' ? 'disabled' : 'enabled'
+      try {
+        const formData = new FormData();
+        formData.append('status', statusData);
+
+        let response = await fetch(`/api/editors/${id}`, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Authorization': 'Bearer ' + token
+          },
+        })
+        editorsData()
+        return await response.json()
+      } catch (err) {
+        console.error(err)
+        return { error: err }
+      }
+    };
+
+    return (
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" value="" checked={status === 'disabled' ? false : true} class="sr-only peer" onClick={toggleStatus} />
+        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+      </label>
+
+    );
+  };
+  //SUSHIL SINGH END
 
   return (
     <div>
@@ -135,7 +196,10 @@ export default function Editors(props) {
                   <td className="p-2 font-medium border-r whitespace-wrap dark:border-neutral-500">{editor.content}</td>
                   {/* <Td>{editor.country}</Td> */}
                   <td className="p-2 font-medium border-r whitespace-wrap dark:border-neutral-500">{editor.phone}</td>
-                  <td className="p-2 font-medium border-r whitespace-wrap dark:border-neutral-500">{statusWithColor(editor.status)}</td>
+                  <td className="p-2 font-medium border-r whitespace-wrap dark:border-neutral-500">
+                    {statusToggleButton(editor.status, editor.id)}
+                  </td>
+                  {/* <td className="p-2 font-medium border-r whitespace-wrap dark:border-neutral-500">{statusWithColor(editor.status)}</td> */}
                   <td className="p-2 font-medium border-r whitespace-wrap dark:border-neutral-500">{parseDate(editor.creation)}</td>
                   {/* <Td>{parseDate(editor.modification)}</Td> */}
                   <td className="p-2 font-medium border-r whitespace-wrap dark:border-neutral-500"><Link className="font-bold text-green-700" to={`/admin/editors/${editor.id}`}>EDIT</Link></td>
