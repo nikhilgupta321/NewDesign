@@ -75,7 +75,18 @@ export default function Search(props) {
                       <div>Pages: {article.pagenumber}</div>
                     </div>
                     <div className="citation"><b>How to cite this article:</b></div>
-                    <div>{article.authroname} <b dangerouslySetInnerHTML={{ __html: decode(article.title) }}></b>. International Journal of Multidisciplinary Research and Development, Volume {article.vol}, Issue {article.issue}, {article.year}, Pages {article.pagenumber}</div>
+                    <div className="text-justify">
+                        {article.authorname &&
+                          formatAuthorNames(article.authorname)}{" "}
+                        "
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: cleanHtml(decode(article.title)),
+                          }}
+                        ></span>
+                        " . {settings.websitename}, Volume {vol}, Issue {issue},{" "}
+                        {year}, Pages {article.pagenumber}
+                      </div>
                   </div>
                 </td>
                 {/* <td>{article.subject}</td> */}
