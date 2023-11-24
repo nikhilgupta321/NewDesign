@@ -5,6 +5,7 @@ import { useParams, Link } from "react-router-dom";
 import { GlobalContext } from "../context/GlobalContext";
 import { searchArchives } from "../helper/api-archives";
 import { decode } from "html-entities";
+import { cleanHtml, formatAuthorNames } from "../helper/helpers";
 
 export default function Search(props) {
   const [searchParams, setSearchParams] = useSearchParams();
