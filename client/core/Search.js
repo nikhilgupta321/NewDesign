@@ -85,8 +85,9 @@ export default function Search(props) {
                             __html: cleanHtml(decode(article.title)),
                           }}
                         ></span>
-                        " . {settings.websitename}, Volume {vol}, Issue {issue},{" "}
-                        {year}, Pages {article.pagenumber}
+                        " . {settings.websitename}, Volume {article.volume},
+                          Issue {article.issue}, {article.year}, Pages{" "}
+                          {article.pagenumber}
                       </div>
                   </div>
                 </td>
