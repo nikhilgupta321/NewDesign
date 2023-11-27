@@ -15,34 +15,34 @@ export default function InstructionsPage(props) {
       <div className="flex gap-[8%]">
         <div>
           <div>
-            <b className="text-gray-700 text-2xl mb-4">Submit Your Article</b><br />
+            <b className="mb-4 text-2xl text-gray-700">Submit Your Article</b><br />
             <b><span className="text-cyan-500">{settings.websiteemail}</span></b>
           </div>
           <br />
           <div>
-            <b className="text-gray-700 text-2xl mb-4">Download Copyright Form <br /> <a href={`/assets/CopyrightAgreementAndAuthorshipResponsibility.doc`} download="copyright.doc" className="text-blue-A">Click Here.. <hr /></a></b>
+            <b className="mb-4 text-2xl text-gray-700">Download Copyright Form <br /> <a href={`/assets/CopyrightAgreementAndAuthorshipResponsibility.doc`} download="copyright.doc" className="text-blue-A">Click Here.. <hr /></a></b>
           </div>
 
           <br />
           <div>
-            <b className="text-gray-700 text-2xl mb-4">Send Article in MS Word file</b>
+            <b className="mb-4 text-2xl text-gray-700">Send Article in MS Word file</b>
           </div>
         </div>
-        <table className="border-separate border-spacing-0">
+        <table className="border-spacing-0">
           <thead>
             <tr>
-              <th className="border-2 p-2 border-r-0 border-b-0 border-slate-800 text-left bg-cyan-300 rounded-tl-md">Region</th>
-              <th className="border-2 p-2 border-b-0 border-slate-800 text-left bg-cyan-300 rounded-tr-md">Fees</th>
+              <th className="p-2 text-left border-2 border-b-0 border-r-0 border-slate-800 bg-cyan-300 rounded-tl-md">Region</th>
+              <th className="p-2 text-left border-2 border-b-0 border-slate-800 bg-cyan-300 rounded-tr-md">Fees</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="border-2 font-bold p-2 border-r-0 border-b-0 border-slate-800">India</td>
-              <td className="border-2 font-bold p-2 border-b-0 border-slate-800">{settings.fee_rupee}</td>
+              <td className="p-2 font-bold border-2 border-b-0 border-r-0 border-slate-800">India</td>
+              <td className="p-2 font-bold border-2 border-b-0 border-slate-800">{settings.fee_rupee}</td>
             </tr>
             <tr>
-              <td className="border-2 font-bold p-2 border-r-0 border-slate-800 rounded-bl-md">Other Countries</td>
-              <td className="border-2 font-bold p-2 border-slate-800 rounded-br-md">{settings.fee_dollar}</td>
+              <td className="p-2 font-bold border-2 border-r-0 border-slate-800 rounded-bl-md">Other Countries</td>
+              <td className="p-2 font-bold border-2 border-slate-800 rounded-br-md">{settings.fee_dollar}</td>
             </tr>
           </tbody>
         </table>
