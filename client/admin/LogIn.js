@@ -14,6 +14,7 @@ export default function LogIn(props) {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
+    debugger
     const credentials = {
       username: values.username,
       password: values.password,

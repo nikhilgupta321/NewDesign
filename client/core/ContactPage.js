@@ -20,6 +20,7 @@ export default function ContactPage(props) {
     <b>
       <div className="flex flex-col gap-5 p-10 text-2xl text-gray-600">
         <PageTitle title="CONTACT US" />
+        <div>{settings.publication}</div>
         <div
           dangerouslySetInnerHTML={{
             __html:
