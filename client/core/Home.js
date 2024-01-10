@@ -32,7 +32,7 @@ export default function Home(props) {
           Peer Reviewed Journal
         </div>
         <div className="text-center">
-          We send published link, <br />certificate, coverpage in {settings.publishdays} days.
+          We send published link, <br />certificate, coverpage.
         </div>
       </div>
       <div className="pt-6" dangerouslySetInnerHTML={{ __html: typeof window !== 'undefined' ? htmlDecode(settings.home_content) : "" }}></div>
