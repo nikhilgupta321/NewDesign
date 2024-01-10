@@ -23,12 +23,12 @@ const sendOtp = async (req, res) => {
 
     fetch(
       "https://api.textlocal.in/send/?" +
-        new URLSearchParams({
-          apiKey: config.textlocalApi,
-          sender: "Acapub",
-          numbers: user.phoneNo,
-          message: `${user.name} use Admin Panel code is ${otp}\nAcapub`,
-        }),
+      new URLSearchParams({
+        apiKey: config.textlocalApi,
+        sender: "Acapub",
+        numbers: user.phoneNo,
+        message: `${user.name} use Admin Panel code is ${otp}\nAcapub`,
+      }),
       {
         method: "POST",
       }
