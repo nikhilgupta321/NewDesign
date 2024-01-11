@@ -10,9 +10,9 @@ const sendOtp = async (user) => {
       body: JSON.stringify(user)
     })
     return await response.json()
-  } catch(err) {
+  } catch (err) {
     console.error(err)
-    return {error: err}
+    return { error: err }
   }
 }
 
@@ -28,9 +28,9 @@ const verifyOtp = async (otp) => {
       body: JSON.stringify(otp)
     })
     return await response.json()
-  } catch(err) {
+  } catch (err) {
     console.error(err)
-    return {error: err}
+    return { error: err }
   }
 }
 
@@ -46,9 +46,9 @@ const login = async (credentials) => {
       body: JSON.stringify(credentials)
     })
     return await response.json()
-  } catch(err) {
+  } catch (err) {
     console.error(err)
-    return {error: err}
+    return { error: err }
   }
 }
 
@@ -63,9 +63,9 @@ const verifyToken = async (credentials) => {
       },
     })
     return await response.json()
-  } catch(err) {
+  } catch (err) {
     console.error(err)
-    return {error: err}
+    return { error: err }
   }
 }
 

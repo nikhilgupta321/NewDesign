@@ -13,8 +13,8 @@ export default function LogIn(props) {
   const navigate = useNavigate();
 
   const onFormSubmit = (e) => {
-    e.preventDefault();
     debugger
+    e.preventDefault();
     const credentials = {
       username: values.username,
       password: values.password,
