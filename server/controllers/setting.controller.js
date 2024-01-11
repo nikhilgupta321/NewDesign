@@ -2,13 +2,15 @@ import Setting from '../models/setting.model';
 
 const list = async (req, res) => {
   try {
-    let data = await Setting.findOne({where: {
-      id: 1
-    }})
+    let data = await Setting.findOne({
+      where: {
+        id: 1
+      }
+    })
     res.json(data)
   } catch (err) {
     console.error(err)
-    return {error: err}
+    return { error: err }
   }
 }
 
@@ -19,10 +21,10 @@ const update = async (req, res) => {
         id: 1
       }
     })
-    res.json({message: 'Success'})
+    res.json({ message: 'Success' })
   } catch (err) {
     console.error(err)
-    return {error: err}
+    return { error: err }
   }
 }
 
