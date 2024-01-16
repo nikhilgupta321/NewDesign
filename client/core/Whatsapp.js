@@ -6,7 +6,7 @@ export default function Whatsapp(props) {
   return (
     <div className="blinkBox">
       <a href={`https://wa.me/919999888671?text=Hi, I have a query regarding publication in ${settings.websitename} (${settings.domain})`}>
-        <img src="/assets/images/whatsapp-logo.png" />
+        <img height="50" src="/assets/images/whatsapp-logo.png" />
       </a>
     </div>
   );

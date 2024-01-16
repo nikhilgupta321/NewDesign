@@ -58,9 +58,9 @@ export default function Root() {
           <div className="py-2 text-center border-t-2 border-cyan-500 lg:border-none">
             <Link to="/archives">ARCHIVES</Link>
           </div>
-          {!hide && (<div className="py-2 text-center border-t-2 border-cyan-500 lg:border-none">
+          {/* {!hide && (<div className="py-2 text-center border-t-2 border-cyan-500 lg:border-none">
             <Link to="/article">SUBMIT ONLINE</Link>
-          </div>)}
+          </div>)} */}
           <div className="py-2 text-center border-t-2 border-cyan-500 lg:border-none">
             <Link to="/indexing">INDEXING</Link>
           </div>
@@ -78,15 +78,15 @@ export default function Root() {
             <Outlet />
           </div>
           <div className="sidebar">
-            {/* <JournalList /> */}
-            {/* <Whatsapp /> */}
+            <JournalList />
+            <Whatsapp />
             {/* <CoverPage /> */}
             {/* <Certificate /> */}
             <Email />
             <CoverPage />
             <Certificate />
             <SearchBar />
-            <Indexing />
+            {/* <Indexing /> */}
             <Contact />
           </div>
         </div>
