@@ -14,14 +14,14 @@ export default function EditorSlot(props) {
         </div>
 
         <div className="text-xl"><i>{props.editor.content}</i></div>
-        <div>
+        {/* <div>
           <b>Email: </b>
           {props.editor.email}
         </div>
         <div>
           <b>Phone: </b>
           {props.editor.phone}
-        </div>
+        </div> */}
       </div>
     </div>
   );
