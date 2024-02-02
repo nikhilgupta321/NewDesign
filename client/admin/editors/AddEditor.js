@@ -31,6 +31,7 @@ export default function AddEditor(props) {
   }
 
   const handleSubmit = () => {
+    debugger
     setIsSubmitted(true)
 
     if (
@@ -67,7 +68,11 @@ export default function AddEditor(props) {
         {!isCreated && <button onClick={handleSubmit} className="w-24 p-2 mb-4 text-gray-100 rounded bg-sky-600">Submit</button>}
       </div>
       <div className="grid grid-cols-3 gap-4">
-        <div><div>AUTHOR NAME *</div><input value={editor.name} onChange={handleChange('name')} className={`w-full border-2 border-gray-300 p-2 focus:outline-emerald-600 ${isSubmitted && formError && editor.name === '' ? 'border-b-red-500' : ''}`} type="text"></input></div>
+        <div><div>AUTHOR NAME *</div>
+          {/* <input value={editor.name} onChange={handleChange('name')} className={`w-full border-2 border-gray-300 p-2 focus:outline-emerald-600 ${isSubmitted && formError && editor.name === '' ? 'border-b-red-500' : ''}`} type="text"></input> */}
+          <input value={editor.name} onChange={handleChange('name')} className={`w-full border-2 border-gray-300 p-2 focus:outline-emerald-600 ${isSubmitted && editor.name === '' ? 'border-b-red-500' : ''}`}
+            type="text" />
+        </div>
         <div><div>EMAIL</div><input value={editor.email} onChange={handleChange('email')} className={`w-full border-2 border-gray-300 p-2 focus:outline-emerald-600`} type="text"></input></div>
         <div>
           <div>PHONE</div>
