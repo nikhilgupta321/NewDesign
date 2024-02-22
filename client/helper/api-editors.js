@@ -10,21 +10,21 @@ const listEditors = async (credentials) => {
     })
     let result = await response.json()
     return result
-  } catch(err) {
+  } catch (err) {
     console.error(err)
-    return {error: err}
+    return { error: err }
   }
 }
 
 const addEditor = async (data, file, credentials) => {
   try {
     const formData = new FormData();
-    for ( var key in data ) {
+    for (var key in data) {
       formData.append(key, data[key]);
     }
-  
+
     formData.append("imgFile", file);
-    
+
     let response = await fetch('/api/editors', {
       method: 'POST',
       body: formData,
@@ -35,7 +35,7 @@ const addEditor = async (data, file, credentials) => {
     return await response.json()
   } catch (err) {
     console.error(err)
-    return {error: err}
+    return { error: err }
   }
 }
 
@@ -45,11 +45,11 @@ const editorById = async (params, signal) => {
       method: "GET",
       signal: signal,
     });
-    const result = await response.json(); 
+    const result = await response.json();
     return result
   } catch (err) {
     console.error(err);
-    return {error: err}
+    return { error: err }
   }
 }
 
@@ -57,12 +57,12 @@ const updateEditor = async (params, credentials) => {
   try {
     const formData = new FormData();
 
-    for ( var key in params.data ) {
+    for (var key in params.data) {
       formData.append(key, params.data[key]);
     }
-  
+
     formData.append("imgFile", params.file);
-    
+
     let response = await fetch(`/api/editors/${params.id}`, {
       method: 'POST',
       body: formData,
@@ -73,7 +73,7 @@ const updateEditor = async (params, credentials) => {
     return await response.json()
   } catch (err) {
     console.error(err)
-    return {error: err}
+    return { error: err }
   }
 }
 
