@@ -5,7 +5,7 @@ const listEditors = async (credentials) => {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + credentials.token
+        'Authorization': 'Bearer' + credentials.token
       }
     })
     let result = await response.json()
