@@ -27,7 +27,7 @@ export default function ContactPage(props) {
               typeof window !== "undefined" ? htmlDecode(settings.address) : "",
           }}
         ></div>
-        WhatsApp your query 
+        WhatsApp your query test 
         <br />
         <div>
           <div className="phoneno">
