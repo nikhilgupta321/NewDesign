@@ -20,7 +20,7 @@
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.5",
-    "nodemon": "^2.0.20",
+    "nodemon": "^3.0.1",
     "postcss": "^8.4.21",
     "postcss-loader": "^7.2.3",
     "postcss-preset-env": "^8.0.1",
