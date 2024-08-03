@@ -247,7 +247,7 @@ table {
 }
 
 #container {
-  max-width: 1130px;
+  max-width: 1044px;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -297,10 +297,9 @@ a {
 .sidebar {
   display: flex;
   flex-direction: column;
-  max-width: 335px;
-  padding: 1%;
+  max-width: 210px;
   gap: 10px;
-  flex: 2;
+  flex: 1;
 }
 
 #phone {
@@ -320,15 +319,26 @@ img {
 
 .sidebar-card {
   /* border: 4px solid #005fff; */
+  /* text-align: center;
+  font-size: 14px; */
+  /* color: #0400ff; */
+  /* font-weight: bold; */
+  border: 4px solid #005fff;
   text-align: center;
   font-size: 14px;
-  /* color: #0400ff; */
+  color: #0400ff;
   font-weight: bold;
 }
 
 .sidebarCardTitle {
-  background-color: #63e3f2;
+  /* background-color: #63e3f2;
   color: rgb(82, 81, 81);
+  margin: 0px;
+  padding: 10px 0px;
+  font-weight: bold;
+  font-size: 15px; */
+  background-color: #005fff;
+  color: white;
   margin: 0px;
   padding: 10px 0px;
   font-weight: bold;
@@ -336,9 +346,9 @@ img {
 }
 
 .sidebarContent {
-  color: rgb(82, 81, 81);
-  padding: 10px;
-  border: 2px solid#93dce4;
+  /* color: rgb(82, 81, 81); */
+  padding: 10px 0px;
+  /* border: 2px solid#93dce4; */
 }
 
 #contact {
@@ -375,10 +385,14 @@ img {
 }
 
 .issue {
-  border: 1px solid rgb(141, 140, 140);
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  color: #0400ff;
+  /* border: 1px solid rgb(141, 140, 140);
   text-align: center;
   padding: 20px;
-  font-size: 14px;
+  font-size: 14px; */
   /* color: gray; */
 }
 
@@ -562,11 +576,10 @@ input[type="text"].searchInput:focus {
 }
 
 #indexing-title {
-  background-color: rgb(3, 214, 214);
-  padding: 10px;
+  padding-top: 20px;
   width: 100%;
   text-align: center;
-  color: rgb(48, 48, 48);
+  color: #0400ff;
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -578,6 +591,9 @@ input[type="text"].searchInput:focus {
   /* color: white; */
   /* background-color: #005fff; */
   /* text-align: center; */
+  color: white;
+  background-color: #005fff;
+  text-align: center;
 }
 
 .page-title {

@@ -15,24 +15,24 @@ export default function InstructionsPage(props) {
       <div className="flex gap-[8%]">
         <div>
           <div>
-            <b className="mb-4 text-2xl text-gray-700">Submit Your Article</b><br />
-            <b><span className="text-cyan-500">{settings.websiteemail}</span></b>
+            <b>Submit Your Article</b><br />
+            <b><span className="text-blue-A">{settings.websiteemail}</span></b>
           </div>
           <br />
           <div>
-            <b className="mb-4 text-2xl text-gray-700">Download Copyright Form <br /> <a href={`/assets/CopyrightAgreementAndAuthorshipResponsibility.doc`} download="copyright.doc" className="text-blue-A">Click Here.. <hr /></a></b>
+            <b>Download Copyright Form <br /> <a href={`/assets/CopyrightAgreementAndAuthorshipResponsibility.doc`} download="copyright.doc" className="text-blue-A">Click Here.. <hr /></a></b>
           </div>
 
           <br />
           <div>
-            <b className="mb-4 text-2xl text-gray-700">Send Article in MS Word file</b>
+            <b >Send Article in MS Word file</b>
           </div>
         </div>
         <table className="border-spacing-0">
           <thead>
             <tr>
-              <th className="p-2 text-left border-2 border-b-0 border-r-0 border-slate-800 bg-cyan-300 rounded-tl-md">Region</th>
-              <th className="p-2 text-left border-2 border-b-0 border-slate-800 bg-cyan-300 rounded-tr-md">Fees</th>
+              <th className="p-2 text-left bg-gray-300 border-2 border-b-0 border-r-0 border-slate-800 rounded-tl-md">Region</th>
+              <th className="p-2 text-left bg-gray-300 border-2 border-b-0 border-slate-800 rounded-tr-md">Fees</th>
             </tr>
           </thead>
           <tbody>

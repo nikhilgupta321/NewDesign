@@ -18,21 +18,21 @@ export default function ContactPage(props) {
 
   return (
     <b>
-      <div className="flex flex-col gap-5 p-10 text-2xl text-gray-600">
+      <div className="flex flex-col gap-5">
         <PageTitle title="CONTACT US" />
-        <div>{settings.publication}</div>
+        {/* <div>{settings.publication}</div> */}
         <div
           dangerouslySetInnerHTML={{
             __html:
               typeof window !== "undefined" ? htmlDecode(settings.address) : "",
           }}
         ></div>
-        WhatsApp your query
+        WhatsApp your query 
         <br />
         <div>
-          <div className="text-2xl phoneno">
+          <div className="phoneno">
             <div>Phone:</div>
-            <div>{`${settings.whatsup_number}`}</div>
+            <div className="text-blue-A" >{`${settings.whatsup_number}`}</div>
             <img
               className="whatsapp-icon"
               src="/assets/images/whatsapp-icon.png"

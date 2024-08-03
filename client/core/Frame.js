@@ -3,8 +3,8 @@ import React from "react";
 export default function Frame(props) {
   return (
     <div>
-      <div className="text-xl text-gray-500 bg-gray-200 title frame-title">{props.title} <hr className="border-gray-500 " /></div>
-      <div className="">{props.children}</div>
+      <div className="title frame-title">{props.title}</div>
+      <div className="border-b-4 border-blue-600 border-x-4">{props.children}</div>
     </div>
   );
 }

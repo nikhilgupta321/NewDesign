@@ -29,33 +29,53 @@ export default function Indexing(props) {
   }, [settings]);
 
   return (
-    <div class="widget-content p-0 pt-30">
-      <div class="tagcloud">
-        <div class="widget-title">
-          <h4><span class="title-icon"><i class="fa fa-tags"></i></span>Abstracting and Indexing Information</h4>
-        </div>
-        {
-          indexing.map((indexing, index) => {
-            return (
-              <a
-                key={`indexing-${index + 1}`}
-                className="flex items-center justify-center p-7 indexing-element"
-                href={indexing.link}
-                style={{ pointerEvents: indexing.link ? "auto" : "none" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {/* {indexing.title} */}
-                <img
-                  src={`assets/indexing/${indexing.image}`}
-                  className="w-auto h-20 "
-                  alt={indexing.title}
-                />
-              </a>
-            );
-          })
-        }
-      </div>
+    // <div class="widget-content p-0 pt-30">
+    //   <div class="tagcloud">
+    //     <div class="widget-title">
+    //       <h4><span class="title-icon"><i class="fa fa-tags"></i></span>Abstracting and Indexing Information</h4>
+    //     </div>
+    //     {
+    //       indexing.map((indexing, index) => {
+    //         return (
+    //           <a
+    //             key={`indexing-${index + 1}`}
+    //             className="flex items-center justify-center p-7 indexing-element"
+    //             href={indexing.link}
+    //             style={{ pointerEvents: indexing.link ? "auto" : "none" }}
+    //             target="_blank"
+    //             rel="noopener noreferrer"
+    //           >
+    //             {/* {indexing.title} */}
+    //             <img
+    //               src={`assets/indexing/${indexing.image}`}
+    //               className="w-auto h-20 "
+    //               alt={indexing.title}
+    //             />
+    //           </a>
+    //         );
+    //       })
+    //     }
+    //   </div>
+    // </div>
+    <div className="grid grid-cols-2 ">
+      {indexing.map((indexing, index) => {
+        return (
+          <a
+            key={`indexing-${index + 1}`}
+            className="flex items-center justify-center p-7 indexing-element"
+            href={indexing.link}
+            style={{ pointerEvents: indexing.link ? "auto" : "none" }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={`assets/indexing/${indexing.image}`}
+              className="w-full h-auto bg-blue-600 -webkit-optimize-contrast"
+              alt={indexing.title}
+            />
+          </a>
+        );
+      })}
     </div>
   );
 }

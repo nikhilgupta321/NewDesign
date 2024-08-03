@@ -36,7 +36,7 @@ export default function Archives(props) {
 
         {archives.map((archive, index) => {
           return (
-            <Frame key={`frame-${index}`} title={`Volume.${archive.volume} : ${archive.year} `}>
+            <Frame key={`frame-${index}`} title={`${archive.year} ISSUES`}>
               <div className="issue-grid">
                 {[...Array(archive.total_issues)].map((e, i) => {
                   const issueIndex = i + 1;
@@ -45,8 +45,8 @@ export default function Archives(props) {
                       key={`issue-${issueIndex}`}
                       to={`/archives/${archive.year}/vol${archive.volume}/issue${issueIndex}`}
                     >
-                      <div className="issue text-cyan-400">
-                        ISSUE {issueIndex}
+                      <div className="issue">
+                      VOL. {archive.volume} : ISSUE {issueIndex}
                       </div>
                     </Link>
                   );
